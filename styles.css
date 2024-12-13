@@ -1,0 +1,257 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('fonts/Fragile\ Bombers\ Down.otf') format('woff2');
+      
+}
+.aboutmephoto{
+    max-width:70%;
+    
+}
+.about-me{
+  background-color:#B3B7EE;
+  border-radius:25px;
+  color:#FBF9FF;
+}
+body{
+  height:2000px;
+  font-family:'MyCustomFont';
+  background-color:#A2A3BB;
+}
+
+
+header {
+  font-size:2em;
+ position:sticky;
+    padding: 20px;
+    padding-bottom: 15px;
+    background-color: #9395D3;
+    border-radius:30px;
+    text-align: center;
+}
+nav{
+  justify-content: space-evenly;
+  display:flex;
+  
+}
+nav a {
+
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+[data-scroll-container] {
+    margin-top: 0px;
+    padding: 20px;
+    padding-top: 0px;
+    
+}
+
+
+.fade-slide-image {
+  margin-top:20px;
+  border-radius:500px;
+    min-width:15%;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(-200%); 
+    transition: opacity 2s ease, transform 2s ease; 
+}
+.about-me{
+    width:80%;
+    float:right;
+    
+    font-size:6em;
+}
+.data-scroll-container{
+    z-index: 0;
+  height:290vh;
+
+}
+.image-container1 {
+    
+     
+    justify-content: left;
+   
+    overflow: hidden; 
+}
+figcaption{
+  font-size:3em;
+  text-align:center;
+}
+[data-scroll] {
+    will-change: transform, opacity;
+    overflow:visible;
+}
+
+
+.image-container2 {
+    display: flex;
+    gap:30px ;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 60vh; 
+    position: relative;
+    overflow: visible;
+}
+
+
+.my-work-container {
+    display: flex;
+    gap:30px ;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+    position: relative;
+   
+}
+
+.slideRight{
+    opacity:0;
+    transform:translateX(-100%);
+    
+}
+
+
+.mywork{
+    opacity:1;
+    transform: translateY(-200%);
+}
+.slideLeft{
+    opacity:0;
+    transform:translateX(100%)
+}
+
+.Section_ReachOut > h1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+      }
+    .Section_ReachOut{
+      margin-top:200px;
+        min-height:100vh;
+    }
+    
+    
+      .photo-Links{
+        float:right;
+       
+      }
+    
+      .link-container{
+     
+        display:flex;
+        flex-direction: column;
+        font-size:3em;
+       }
+
+@keyframes fade-slide-in-top {
+    from {
+      opacity: 0;
+      transform: translateY(-200%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+@keyframes fade-slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  @keyframes fade-slide-in-bottom-right {
+    from {
+      opacity: 0;
+      transform: translateX(-80%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-10%) rotate(-45deg);
+    }
+  }
+  .link-container{
+     
+    display:flex;
+    flex-direction: column;
+    font-size:6em;
+    margin-top:30px;
+    margin-bottom:40px;
+    padding-top: 200px;
+    padding-bottom:40px;
+   }
+  .link-container a {
+    color:blue;
+    text-decoration:none;
+    opacity: 0;
+    transform: translateX(-80%) rotate(-45deg);
+    border-left: 3px black solid;
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
+    margin:0;
+    width:10px;
+    
+}
+.link-container a.is-inview {
+  opacity: 1;
+  animation: fade-slide-in-bottom-right 0.8s ease forwards; 
+}
+
+
+[data-scroll].is-inview .slideRight {
+  opacity: 1;
+  animation: fade-slide-in-left 0.8s ease forwards; 
+}
+[data-scroll].is-inview .mywork {
+  opacity: 1;
+  animation: fade-slide-in-top 0.8s ease forwards; 
+}
+[data-scroll].is-inview .slideLeft {
+  opacity: 1;
+  animation: fade-slide-in-right 0.8s ease forwards; 
+}
+
+.link-container a.is-outview {
+  opacity: 1;
+  animation: fade-slide-in-bottom-right 0.8s ease backwards; 
+}
+
+
+[data-scroll].is-outview .slideRight {
+  opacity: 1;
+  animation: fade-slide-in-left 0.8s ease backwards; 
+}
+[data-scroll].is-outview .mywork {
+  opacity: 1;
+  animation: fade-slide-in-top 0.8s ease backwards; 
+}
+[data-scroll].is-outview .slideLeft {
+  opacity: 1;
+  animation: fade-slide-in-right 0.8s ease backwards; 
+}
+
+
+
